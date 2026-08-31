@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get It Free - The Psychology of Money (PDF)</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f7f9f8;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            min-height: 70vh;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        /* تصغير العنوان قليلاً ليكون متناسقاً */
+        .hero-content h1 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #6a9c78;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        /* CTA Button */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #7cad8b 0%, #588563 100%);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 18px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(106, 156, 120, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(106, 156, 120, 0.4);
+            background: linear-gradient(135deg, #6a9c78 0%, #4b7355 100%);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8e4;
+        }
+
+        .stat-item h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* Visual Book Area with Pistachio Glow Effect */
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .book-glow-container {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* تأثير الشعاع الإضاءة بلون البيستاش */
+        .book-glow-container::before {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(106, 156, 120, 0.45), rgba(143, 185, 154, 0.25));
+            filter: blur(40px);
+            z-index: 1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .book-img-wrapper {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+            padding: 12px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(106, 156, 120, 0.25);
+            border: 2px solid rgba(106, 156, 120, 0.3);
+            max-width: 260px;
+        }
+
+        .book-img-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Floating Badge */
+        .floating-badge {
+            position: absolute;
+            bottom: -15px;
+            right: -10px;
+            background: #fff;
+            padding: 10px 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #e2e8e4;
+            z-index: 3;
+        }
+
+        .floating-badge i {
+            color: #588563;
+            background: #edf5ef;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        .floating-badge span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            display: block;
+        }
+
+        .floating-badge small {
+            font-size: 0.7rem;
+            color: #777;
+        }
+
+        /* Features Cards Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            border: 1px solid #e2e8e4;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .feature-line {
+            width: 40px;
+            height: 4px;
+            background: #6a9c78;
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design: في الهاتف، نعكس الترتيب لتكون الصورة في الأعلى */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column-reverse; /* يجعل الصورة في الأعلى والنص في الأسفل على الهواتف */
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 25px auto;
+            }
+
+            .btn-cta {
+                margin: 0 auto;
+            }
+
+            .stats-bar {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-badge {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: -20px;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Master your mind, <span>grow your wealth.</span></h1>
+                <p>Your free book is ready! Just verify you're human (takes less than a minute) to unlock instant access to Morgan Housel's masterpiece.</p>
+                
+                <!-- CTA Button -->
+                <a href="https://offer.yr36.me/cl/i/27ow5k" class="btn-cta">
+                    Get It Free <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <h3>1 Min</h3>
+                        <p>Quick check</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Free access</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Instant</h3>
+                        <p>PDF unlock</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="book-glow-container">
+                    <div class="book-img-wrapper">
+                        <!-- صورة الكتاب مع تأثير الشعاع -->
+                        <img src="https://m.media-amazon.com/images/I/71si36sM1BL._SY466_.jpg" alt="The Psychology of Money">
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="floating-badge">
+                        <i class="fa-solid fa-check"></i>
+                        <div>
+                            <span>Offer available now</span>
+                            <small>Verified secure</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-grid">
+            <div class="feature-box">
+                <div class="feature-line"></div>
+                <h3>Smart Choice</h3>
+                <p>Learn why managing money has less to do with what you know and more to do with how you behave.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-line"></div>
+                <h3>Simple Steps</h3>
+                <p>Confirm you are not a robot with one quick step below to unlock your instant download right now.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-line"></div>
+                <h3>Full Clarity</h3>
+                <p>Enjoy complete, unedited digital access to the full book instantly on mobile, tablet, or desktop.</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
